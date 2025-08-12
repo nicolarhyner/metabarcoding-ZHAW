@@ -35,7 +35,8 @@ module load gcc/9.4.0-pe5.34 miniconda3/4.12.0 lsfm-init-miniconda/1.0.0
 	#fastq_dir=/cfs/earth/scratch/rhyn/ZHAW_MiSeq_run_0071/untrimmed_raw #path to the folder containing your fastq files. Works with gzipped and gunzipped files
 	project_name=$1 #The project name of your apscale project. Must have been created prior to this script
 	rename_files=$2 #set to TRUE if your input files end with <samplename>_S**_L001_R1_001.fastq.gz or <samplename>_S**_L001_R2_001.fastq.gz Set to FALSE if they end with <samplename>_R1.fastq.gz or <samplename>_R2.fastq.gz
-    apscale_env=/cfs/earth/scratch/iunr/egsb/shared/conda-envs/apscale #path to your apscale conda environment with apscale, apscale-blast and all required dependencies
+    taxonomic_assignment=$3
+	apscale_env=/cfs/earth/scratch/iunr/egsb/shared/conda-envs/apscale #path to your apscale conda environment with apscale, apscale-blast and all required dependencies
     apscale_project_path=/cfs/earth/scratch/rhyn/apscale_projects #path to the folder containing your apscale project(s)
 
 # If your files have another naming then <samplename>_S**_L001_R1_001.fastq.gz, e.g. <samplename>_S**_L001_R1_001.trimmed.fastq.gz, adjust the Regex in the function FastRenamer
